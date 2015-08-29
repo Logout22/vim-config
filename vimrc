@@ -7,6 +7,7 @@ if has("gui_running")
     set lines=50 columns=120
     set spell spelllang=en_gb
     "set spelllang=de_20
+    "autocmd VimEnter * NERDTree
 endif
 " A line end marker
 set colorcolumn=80
