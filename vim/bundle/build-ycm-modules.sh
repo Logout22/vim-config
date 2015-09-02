@@ -1,4 +1,7 @@
 #! /bin/bash
+if ! (which cmake && which make) > /dev/null 2>&1; then
+    exit 1
+fi
 MODULEDIR="$(dirname "$(readlink -f "$0")")"
 COMPILEDIR="/tmp/ycm_temp"
 [ -d "$COMPILEDIR" ] && rm -rf "$COMPILEDIR"
