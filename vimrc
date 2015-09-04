@@ -19,6 +19,7 @@ autocmd FileType cpp set cindent
 autocmd BufWritePre * :%s/\s\+$//e
 " Opposite to J (Ctrl-J):
 nnoremap <C-J> a<CR><ESC>
-
+" disable scratch preview window:
+set completeopt-=preview
 let g:localvimrc_whitelist='/home/munzner/.*'
 
