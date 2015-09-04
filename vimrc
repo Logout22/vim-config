@@ -20,3 +20,5 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Opposite to J (Ctrl-J):
 nnoremap <C-J> a<CR><ESC>
 
+let g:localvimrc_whitelist='/home/munzner/.*'
+
