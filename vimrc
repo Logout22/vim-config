@@ -21,4 +21,6 @@ nnoremap <C-J> a<CR><ESC>
 " disable scratch preview window:
 set completeopt-=preview
 let g:localvimrc_whitelist='/home/munzner/.*'
+" enable smart case-sensitive searches
+set ignorecase smartcase
 
