@@ -24,6 +24,7 @@ nnoremap <F12> :cnext<CR>
 " disable scratch preview window:
 set completeopt-=preview
 let g:localvimrc_whitelist='/home/munzner/.*'
+let g:localvimrc_sandbox=0
 " enable smart case-sensitive searches
 set ignorecase smartcase
 " introduce // to search for selected text:
