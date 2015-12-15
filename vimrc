@@ -29,4 +29,6 @@ let g:localvimrc_sandbox=0
 set ignorecase smartcase
 " introduce // to search for selected text:
 vnoremap // y/<C-R>"<CR>
+" disable modelines (security, workflow reasons)
+set modelines=0
 
