@@ -18,6 +18,8 @@ autocmd FileType cpp set cindent
 autocmd BufWritePre * :%s/\s\+$//e
 " Opposite to J (Ctrl-J):
 nnoremap <C-J> a<CR><ESC>
+" Find keywords in files
+nnoremap <F10> [I
 " For easier error navigation
 nnoremap <F11> :cprevious<CR>
 nnoremap <F12> :cnext<CR>
