@@ -18,8 +18,8 @@ autocmd FileType cpp set cindent
 autocmd BufWritePre * :%s/\s\+$//e
 " Opposite to J (Ctrl-J):
 nnoremap <C-J> a<CR><ESC>
-" Find keywords in files
-nnoremap <F9> [I
+" Find keywords in files (taken from Vim help)
+nnoremap <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 " For easier error navigation
 nnoremap <F11> :cprevious<CR>
 nnoremap <F12> :cnext<CR>
