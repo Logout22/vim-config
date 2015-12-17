@@ -33,4 +33,6 @@ set ignorecase smartcase
 vnoremap // y/<C-R>"<CR>
 " disable modelines (security, workflow reasons)
 set modelines=0
+" set up vimgrep to browse code repos
+command -nargs=1 Codegrep vimgrep <args> **/*.c **/*.h **/*.cpp **/*.txt **/*.asm
 
