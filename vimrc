@@ -29,6 +29,8 @@ let g:localvimrc_whitelist='/home/munzner/.*'
 let g:localvimrc_sandbox=0
 " enable smart case-sensitive searches
 set ignorecase smartcase
+" make g flag default (g flag in replacements means 'non-greedy' then):
+set gdefault
 " introduce // to search for selected text:
 vnoremap // y/<C-R>"<CR>
 " disable modelines (security, workflow reasons)
