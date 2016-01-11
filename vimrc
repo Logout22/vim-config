@@ -21,8 +21,8 @@ nnoremap <C-J> a<CR><ESC>
 " Find keywords in files (taken from Vim help)
 nnoremap <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 " For easier error navigation
-nnoremap <F11> :cprevious<CR>
-nnoremap <F12> :cnext<CR>
+nnoremap <F8> :cprevious<CR>
+nnoremap <F9> :cnext<CR>
 " disable scratch preview window:
 set completeopt-=preview
 let g:localvimrc_whitelist='/home/munzner/.*'
