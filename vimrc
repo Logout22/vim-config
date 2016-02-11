@@ -20,6 +20,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 nnoremap <C-J> a<CR><ESC>
 " Find keywords in files (taken from Vim help)
 nnoremap <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+nnoremap <F7> :Unite file_mru<CR>
 " For easier error navigation
 nnoremap <F8> :cprevious<CR>
 nnoremap <F9> :cnext<CR>
@@ -35,6 +36,12 @@ set gdefault
 vnoremap // y/<C-R>"<CR>
 " disable modelines (security, workflow reasons)
 set modelines=0
-" set up vimgrep to browse code repos
-command -nargs=1 Codegrep vimgrep <args> **/*.c **/*.h **/*.cpp **/*.txt **/*.asm
+" set up ag to browse code repos
+if executable('ag')
+    let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --hidden -g ""'
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'
+    let g:unite_source_grep_recursive_opt=''
+endif
+nnoremap <C-F> "zyiw:exe "Unite grep:.::".@z.""<CR>
 
