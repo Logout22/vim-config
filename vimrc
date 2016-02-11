@@ -44,4 +44,5 @@ if executable('ag')
     let g:unite_source_grep_recursive_opt=''
 endif
 nnoremap <C-F> "zyiw:exe "Unite grep:.::".@z.""<CR>
+nnoremap <C-A> :Unite -start-insert file_rec/async<CR>
 
