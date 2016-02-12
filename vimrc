@@ -43,6 +43,7 @@ if executable('ag')
     let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'
     let g:unite_source_grep_recursive_opt=''
 endif
+call unite#custom#source("grep", "max_candidates", 0)
 nnoremap <C-F> "zyiw:exe "Unite grep:.::".@z.""<CR>
 nnoremap <C-A> :Unite -start-insert file_rec/async<CR>
 
