@@ -20,6 +20,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 nnoremap <C-J> a<CR><ESC>
 " Find keywords in files (taken from Vim help)
 nnoremap <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+nnoremap <F6> :Unite -start-insert file_rec/async<CR>
 nnoremap <F7> :Unite file_mru<CR>
 " For easier error navigation
 nnoremap <F8> :cprevious<CR>
@@ -44,6 +45,5 @@ if executable('ag')
     let g:unite_source_grep_recursive_opt=''
 endif
 call unite#custom#source("grep", "max_candidates", 0)
-nnoremap <C-F> "zyiw:exe "Unite grep:.::".@z.""<CR>
-nnoremap <C-A> :Unite -start-insert file_rec/async<CR>
+nnoremap <C-S> "zyiw:exe "Unite grep:.::".@z.""<CR>
 
