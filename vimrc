@@ -1,5 +1,12 @@
 execute pathogen#infect()
 
+let s:vimconfigpath=fnamemodify(resolve(expand('<sfile>:p')), ":h")
+
+execute "source ".s:vimconfigpath."/utilities.vim"
+
+" Defines custom menu for F4 key
+execute "source ".s:vimconfigpath."/menus.vim"
+
 syntax on
 filetype plugin on
 set smarttab expandtab shiftwidth=4 softtabstop=4 tabstop=4 autoindent
@@ -18,32 +25,29 @@ autocmd FileType cpp set cindent
 autocmd BufWritePre * :%s/\s\+$//e
 " Opposite to J (Ctrl-J):
 nnoremap <C-J> a<CR><ESC>
-" Find keywords in files (taken from Vim help)
-nnoremap <F4> [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
-nnoremap <F6> :Unite -start-insert file_rec/async<CR>
-nnoremap <F7> :Unite file_mru<CR>
+" Create a mapping to open a custom menu
+nnoremap <F4> :<C-U>Unite menu:my_commands -start-insert -ignorecase<CR>
 " For easier error navigation
 nnoremap <F8> :cprevious<CR>
 nnoremap <F9> :cnext<CR>
-" disable scratch preview window:
+" Disable scratch preview window:
 set completeopt-=preview
 let g:localvimrc_whitelist='/home/munzner/.*'
 let g:localvimrc_sandbox=0
-" enable smart case-sensitive searches
+" Enable smart case-sensitive searches
 set ignorecase smartcase
-" make g flag default (g flag in replacements means 'non-greedy' then):
+" Make g flag default (g flag in replacements means 'non-greedy' then):
 set gdefault
-" introduce // to search for selected text:
+" Introduce // to search for selected text:
 vnoremap // y/<C-R>"<CR>
-" disable modelines (security, workflow reasons)
+" Disable modelines (security, workflow reasons)
 set modelines=0
-" set up ag to browse code repos
+" Set up ag to browse code repos
 if executable('ag')
     let g:unite_source_rec_async_command = 'ag --nocolor --nogroup --hidden -g ""'
     let g:unite_source_grep_command = 'ag'
     let g:unite_source_grep_default_opts = '--nocolor --nogroup --hidden'
     let g:unite_source_grep_recursive_opt=''
 endif
+" Do not truncate grep's result list
 call unite#custom#source("grep", "max_candidates", 0)
-nnoremap <C-S> "zyiw:exe "Unite grep:.::".@z.""<CR>
-
