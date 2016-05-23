@@ -28,3 +28,6 @@
 [submodule "vim/bundle/vimproc.vim"]
 	path = vim/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim
+[submodule "vim/bundle/vim-lldb"]
+	path = vim/bundle/vim-lldb
+	url = https://github.com/gilligan/vim-lldb
