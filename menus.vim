@@ -21,10 +21,7 @@ endfunction
 
 " Define our list of [Label, Command] pairs
 let g:unite_source_menu_menus.my_commands.command_candidates = [
-\   ['1 Open/Close NERDTree', 'NERDTreeToggle'],
-\   ['2 Find current word through Vim', 'call InvokeVimOccurence()'],
-\   ['3 Find current word through grep', 'call InvokeGrepOccurence()'],
-\   ['4 Find keyword through grep', 'Unite grep:.'],
-\   ['5 Browse most recently used files', 'Unite file_mru'],
-\   ['6 Browse all files', 'Unite -start-insert file_rec/async']
+\   ['1 Find current word through grep', 'call InvokeGrepOccurence()'],
+\   ['2 Find keyword through grep', 'Unite grep:.'],
+\   ['3 Browse all files', 'Unite -start-insert file_rec/async']
 \ ]

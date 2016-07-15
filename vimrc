@@ -15,25 +15,14 @@ if has("gui_running")
     set spell spelllang=en_gb
     "set spelllang=de_20
 endif
-" A line end marker
-set colorcolumn=80
 set ruler
 autocmd FileType make set noexpandtab
 autocmd FileType c set cindent
 autocmd FileType cpp set cindent
-" Remove trailing whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
 " Opposite to J (Ctrl-J):
 nnoremap <C-J> a<CR><ESC>
 " Create a mapping to open a custom menu
 nnoremap <F4> :<C-U>Unite menu:my_commands -start-insert -ignorecase<CR>
-" For easier error navigation
-nnoremap <F8> :cprevious<CR>
-nnoremap <F9> :cnext<CR>
-" Disable scratch preview window:
-set completeopt-=preview
-let g:localvimrc_whitelist='/home/munzner/.*'
-let g:localvimrc_sandbox=0
 " Enable smart case-sensitive searches
 set ignorecase smartcase
 " Make g flag default (g flag in replacements means 'non-greedy' then):
